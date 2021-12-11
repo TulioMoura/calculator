@@ -24,7 +24,6 @@ var num7=document.getElementById("n7");
 var num8=document.getElementById("n8");
 var num9=document.getElementById("n9");
 
-
 var div0 =document.getElementById("div");
 var mult0=document.getElementById("mult");
 var soma0=document.getElementById("soma");
@@ -113,7 +112,7 @@ function atualizatela(){
     else {
         tela=Number(valor2);
     }
-    result.value=tela;
+    result.innerText=tela;
 }
 
 function igual(){
@@ -130,7 +129,7 @@ function igual(){
     else if(opera=='sb'){
         subtrair();
     }
-    result.value=resultado;
+    result.innerText=resultado;
     console.log(resultado)
     
 
