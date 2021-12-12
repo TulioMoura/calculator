@@ -3,7 +3,8 @@ var valor2='x'
 var tipo=false;
 var resultado=0;
 var opera;
-
+var fpPrecision=5;
+const screenSize = 10
 var tela;
 var neg1=false;
 var neg2=false;
@@ -24,7 +25,6 @@ var num7=document.getElementById("n7");
 var num8=document.getElementById("n8");
 var num9=document.getElementById("n9");
 
-
 var div0 =document.getElementById("div");
 var mult0=document.getElementById("mult");
 var soma0=document.getElementById("soma");
@@ -34,11 +34,13 @@ var result=document.getElementById("rst");
 var reset=document.getElementById("limp");
 var ponto=document.getElementById("dot");
 var nega=document.getElementById("neg");
+var sqr=document.getElementById("sqr");
 
 div0.addEventListener('click',divi);
 mult0.addEventListener('click',multi);
 soma0.addEventListener('click',soma);
 sub0.addEventListener('click',subt);
+sqr.addEventListener('click',squareRoot)
 
 igual0.addEventListener('click',igual);
 
@@ -88,6 +90,16 @@ function dig(j){
 
 }
 
+function intSize(value){
+
+    let cnt=0
+    while(value>10){
+        value=value/10;
+        cnt++
+    }
+    return cnt;
+}
+
 function zerar(){
     limpar();
     atualizatela();
@@ -113,7 +125,7 @@ function atualizatela(){
     else {
         tela=Number(valor2);
     }
-    result.value=tela;
+    result.innerText=tela;
 }
 
 function igual(){
@@ -130,8 +142,20 @@ function igual(){
     else if(opera=='sb'){
         subtrair();
     }
-    result.value=resultado;
+    else if(opera=='sqr'){
+        raiz();
+    }
     console.log(resultado)
+    fpPrecision = screenSize-intSize(resultado)
+    valor1=resultado;
+    valor2=0;
+    if(resultado-Math.floor(resultado)!=0){
+        result.innerText=resultado.toFixed(fpPrecision);
+    }
+    else(result.innerText=resultado)
+    
+    
+    opera=''
     
 
 }
@@ -145,38 +169,47 @@ function divi(){
         igual();
         valor1=resultado;
         valor2='x'
-    }
+    } 
 
     opera='d';
     mudar();
 }
+
+function squareRoot(){
+    console.log(valor1)
+    opera = 'sqr'
+    mudar();
+    igual();
+    valor1=resultado;
+}
+
 function multi(){
-    if(valor2!='x'){
+     if(valor2!='x'){
         
         igual();
         valor1=resultado;
         //valor2='x'
-    }
+    } 
     mudar();
     opera='m';
 }
 function soma(){
-    if(valor2!='x'){
+     if(valor2!='x'){
         
         igual();
         valor1=resultado;
         //valor2='x'
-    }
+    } 
     mudar();
     opera='sm';
 }
 function subt(){
     if(valor2!='x'){
-        
+      
         igual();
         valor1=resultado;
         //valor2='x'
-    }
+    } 
     mudar();
     opera='sb';
 }
@@ -203,6 +236,17 @@ function multiplicar(){
         s=s*-1
     }
     resultado=p*s;
+}
+
+function raiz(){
+    vl=Number(valor1);
+    if(neg1==true){
+        resultado=0
+    }
+    else{
+    resultado=Math.sqrt(vl);  
+    }
+    
 }
 function somar(){
     p=Number(valor1);

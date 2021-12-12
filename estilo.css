@@ -27,9 +27,13 @@ button{
 button:hover{
         background-color: dodgerblue;
     }
-input{
-    width: 200px;
+#rst{
+    float: none;
+    text-align: right;
+    vertical-align: bottom; 
+    width: 240px;
     height: 50px;
-    font-size: 25px;
+    font-size: 25pt;
     border-radius: 10px;
+    background-color: aliceblue;
 }
