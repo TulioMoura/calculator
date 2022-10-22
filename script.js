@@ -208,6 +208,12 @@ function subt(){
 function dividir(){
     let p=Number(valor1);
     let s=Number(valor2);
+
+    if(valor2==0){
+        resultado = 0;
+        return;
+    }
+
     if(neg1==true){
         p=p*-1
     }
