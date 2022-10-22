@@ -14,16 +14,6 @@ num=[];
     num[i] =document.getElementsByTagName("button")[i];
 } */
 
-var num0=document.getElementById("n0");
-var num1=document.getElementById("n1");
-var num2=document.getElementById("n2");
-var num3=document.getElementById("n3");
-var num4=document.getElementById("n4");
-var num5=document.getElementById("n5");
-var num6=document.getElementById("n6");
-var num7=document.getElementById("n7");
-var num8=document.getElementById("n8");
-var num9=document.getElementById("n9");
 
 var div0 =document.getElementById("div");
 var mult0=document.getElementById("mult");
@@ -32,9 +22,9 @@ var sub0 =document.getElementById("sub");
 var igual0=document.getElementById("igual");
 var result=document.getElementById("rst");
 var reset=document.getElementById("limp");
-var ponto=document.getElementById("dot");
-var nega=document.getElementById("neg");
 var sqr=document.getElementById("sqr");
+
+var numbers = document.querySelectorAll("#num");
 
 div0.addEventListener('click',divi);
 mult0.addEventListener('click',multi);
@@ -43,6 +33,12 @@ sub0.addEventListener('click',subt);
 sqr.addEventListener('click',squareRoot)
 
 igual0.addEventListener('click',igual);
+
+for(let i=0; i<11, i++;){
+    numbers[i].addEventListener("click",number)
+}
+
+
 
 /* for(var i=0;i<10;i++){
     num[i].addEventListener('click', dig);
@@ -62,20 +58,15 @@ igual0.addEventListener('click',igual);
 
 } */
 
-num1.addEventListener('click',numero1);
-num2.addEventListener('click',numero2);
-num3.addEventListener('click',numero3);
-num4.addEventListener('click',numero4);
-num5.addEventListener('click',numero5);
-num6.addEventListener('click',numero6);
-num7.addEventListener('click',numero7);
-num8.addEventListener('click',numero8);
-num9.addEventListener('click',numero9);
-num0.addEventListener('click',numero0);
+
 
 reset.addEventListener('click',zerar);
 ponto.addEventListener('click',decimal);
 nega.addEventListener('click',men0);
+
+function number(){
+    console.log('e')
+}
 
 function dig(j){
     if(tipo==false){
