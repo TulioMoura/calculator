@@ -1,5 +1,5 @@
 var valor1=0;
-var valor2='x'
+var valor2='x';
 var tipo=false;
 var resultado=0;
 var opera;
@@ -24,49 +24,27 @@ var result=document.getElementById("rst");
 var reset=document.getElementById("limp");
 var sqr=document.getElementById("sqr");
 
-var numbers = document.querySelectorAll("#num");
+var numbers = document.getElementsByClassName("num");
+
+for(let i=0; i<11; i++){
+    numbers[i].addEventListener("click",number)
+    
+}
+
+function number(){
+    dig(this.innerText)
+}
 
 div0.addEventListener('click',divi);
 mult0.addEventListener('click',multi);
 soma0.addEventListener('click',soma);
 sub0.addEventListener('click',subt);
 sqr.addEventListener('click',squareRoot)
-
 igual0.addEventListener('click',igual);
-
-for(let i=0; i<11, i++;){
-    numbers[i].addEventListener("click",number)
-}
-
-
-
-/* for(var i=0;i<10;i++){
-    num[i].addEventListener('click', dig);
-    
-    function dig(){
-        if(tipo==false){
-            valor1=valor1+String(i);
-        }
-        else {
-            valor2=valor2+String(i);
-            
-        }
-        atualizatela();
-     console.log(i)
-    
-    }
-
-} */
-
-
-
 reset.addEventListener('click',zerar);
 ponto.addEventListener('click',decimal);
 nega.addEventListener('click',men0);
 
-function number(){
-    console.log('e')
-}
 
 function dig(j){
     if(tipo==false){
