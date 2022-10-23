@@ -14,31 +14,42 @@
 
 
 <div id="rst"></div><br>
-<button id="limp">ce</button>
-<button id="sqr">√</button>
-<button id="igual" style="width: 104px;">=</button>
-<br>
-
-<button id="div"  >÷</button>
-<button id="n7" >7</button>
-<button id="n8" >8</button>
-<button id="n9" >9</button><br>
-
-<button id="mult" >×</button>
-<button id="n4" >4</button>
-<button id="n5" >5</button>
-<button id="n6" >6</button><br>
-
-<button id="sub"  >-</button>
-<button id="n1" >1</button>
-<button id="n2" >2</button>
-<button id="n3" >3</button><br>
 
 
-<button id="soma" >+</button>
-<button id="dot">.</button>
-<button id="n0">0</button>
-<button id="neg">±</button>
+<div class="row-1">
+    <div class="operations">
+    <button id="limp">ce</button>
+    <button id="div"  >÷</button>
+    <button id="mult" >×</button>
+    <button id="sub"  >-</button>
+    <button id="soma" >+</button>
+</div>
+
+<div class="row-3">
+<div class="row-2">
+
+    <button id="sqr">√</button>
+    <button id="igual" style="width: 104px;">=</button>
+</div>
+
+<div id="numbers">
+    <button id="neg">±</button>
+    <script>
+        //number buttons generator
+        const values = ["9","8","7","6","5","4","3","2","1",".","0"] //in order of view
+        values.forEach(number => {
+            let newbutton = document.createElement("button")
+            newbutton.setAttribute("class","num");
+            let num = document.createTextNode(number)
+            newbutton.appendChild(num);
+            
+            beforeItem = document.getElementById("neg");
+            document.getElementById("numbers").insertBefore(newbutton, beforeItem);
+        });
+    </script>
+</div>
+</div>
+</div>
 
 
 </div>
